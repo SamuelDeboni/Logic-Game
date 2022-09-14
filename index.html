@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>WASM in odin</title>
+
+	<style>
+		* {
+			margin: 0;
+			background-color: #101010;
+		}
+
+		#canvas_container {
+			text-align: center;
+		}
+
+		canvas {
+			display: inline;
+		}
+
+		canvas:focus {
+  			outline: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id=canvas_container>
+		<canvas
+		id="gl_canvas"
+		width="1080"
+		height="720"
+		concontextmenu="return false;"
+		tabindex="1"
+		></canvas>
+	</div>
+
+	<script type="text/javascript" src="runtime.js"></script>
+	<script type="text/javascript">
+		odin.runWasm("./out.wasm", document.getElementById("console"));
+	</script>
+</body>
+</html>
